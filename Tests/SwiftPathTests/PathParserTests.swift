@@ -70,5 +70,9 @@ class PathParserTests: XCTestCase {
         }
         XCTAssertEqual(index, 0)
     }
-    
+
+    func testSingleQuotedDoubleQuotePropertyOnRoot() {
+        let result = PathParser.parse(path: "$['\"']")
+        XCTAssertNil(result)
+    }
 }
