@@ -214,4 +214,8 @@ class PathParserTests: XCTestCase {
         XCTAssertEqual(rename, ["name", "symbol", "btc"])
     }
     
+    func testSingleQuotedDoubleQuotePropertyOnRoot() {
+        let result = PathParser.parse(path: "$['\"']")
+        XCTAssertNil(result)
+    }
 }
